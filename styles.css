@@ -1042,3 +1042,163 @@ h2 {
     transition-duration: 0.01ms !important;
   }
 }
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* CONTENEDOR DE LOS BOTONES DE CONTACTO */
+
+.contact-buttons {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* BOTÓN DE INSTAGRAM */
+
+.instagram-button {
+  display: flex;
+  width: min(100%, 385px);
+  min-width: 0;
+  min-height: 88px;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  border: 1px solid var(--terracotta);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brown);
+  text-decoration: none;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.instagram-button:hover {
+  background: var(--terracotta);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(198, 110, 75, 0.2);
+  transform: translateY(-4px);
+}
+
+.instagram-button:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 5px;
+}
+
+/* ÍCONO */
+
+.instagram-button__icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(198, 110, 75, 0.12);
+  color: var(--terracotta);
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.instagram-button__icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+}
+
+/* Punto pequeño del ícono */
+
+.instagram-button__icon svg circle:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.instagram-button:hover .instagram-button__icon {
+  background: rgba(255, 250, 244, 0.18);
+  color: var(--white);
+}
+
+/* TEXTO */
+
+.instagram-button__text {
+  display: block;
+  min-width: 0;
+}
+
+.instagram-button__text strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.instagram-button__text small {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  font-weight: 300;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* MÓVILES PEQUEÑOS */
+
+@media (max-width: 420px) {
+  .instagram-button {
+    min-height: 80px;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .instagram-button__icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .instagram-button__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .instagram-button__text strong {
+    font-size: 0.7rem;
+  }
+
+  .instagram-button__text small {
+    font-size: 0.6rem;
+  }
+}
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+  .instagram-button,
+  .instagram-button__icon {
+    transition: none;
+  }
+
+  .instagram-button:hover {
+    transform: none;
+  }
+}
